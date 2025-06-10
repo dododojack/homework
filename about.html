@@ -7,12 +7,12 @@
     <style>
         body {
             font-family: "微軟正黑體", Arial, sans-serif;
-            background-color: #f0f4f8;
+            background-color: #fff8f0;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #1e40af;
+            background-color: #6a8caf;
             color: white;
             padding: 30px 20px;
             text-align: center;
@@ -29,23 +29,25 @@
         }
         h2 {
             text-align: center;
-            color: #1e40af;
+            color: #6a8caf;
             margin-bottom: 20px;
         }
         p {
             font-size: 1.1em;
             line-height: 1.6;
             margin-bottom: 15px;
+            color: #444;
         }
         ul {
             padding-left: 20px;
             margin-bottom: 20px;
+            color: #444;
         }
         button {
             display: block;
             margin: 30px auto 0;
             padding: 10px 20px;
-            background-color: #1e40af;
+            background-color: #6a8caf;
             color: white;
             border: none;
             border-radius: 8px;
@@ -54,7 +56,41 @@
             transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #357abd;
+            background-color: #56789c;
+        }
+
+        /* 新增圖片區容器 */
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0 40px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .image-box {
+            flex: 1 1 45%;
+            text-align: center;
+        }
+        .image-box img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .caption {
+            margin-top: 8px;
+            font-weight: 600;
+            color: #6a8caf;
+            font-size: 1em;
+        }
+
+        /* 窄螢幕下堆疊 */
+        @media (max-width: 600px) {
+            .image-container {
+                flex-direction: column;
+            }
+            .image-box {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
@@ -78,6 +114,18 @@
 
         <h2>興趣與專長</h2>
         <p>我對電腦程式非常有熱情，喜歡亂寫網站和學習新技術，也喜愛騎車。</p>
+
+        <!-- 新增圖片區 -->
+        <div class="image-container">
+            <div class="image-box">
+                <img src="img/work1.jpg" alt="第一張圖片" />
+                <div class="caption">第一張</div>
+            </div>
+            <div class="image-box">
+                <img src="img/work2.jpg" alt="第二張圖片" />
+                <div class="caption">第二張</div>
+            </div>
+        </div>
 
         <button onclick="location.href='index.html'">返回首頁</button>
     </main>
