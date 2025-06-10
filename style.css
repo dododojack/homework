@@ -106,9 +106,14 @@ header h1, header p {
 
 .side-image.left {
     left: 25%;             /* 視窗左半區中間 */
+    width: 400px;          /* 放大50% */
+
 }
 
 .side-image.right {
-    left: 75%;             /* 視窗右半區中間 */
+    left: 75%;
+                 /* 視窗右半區中間 */
+    width: 500px;          /* 放大50% */
+             
 }
 
