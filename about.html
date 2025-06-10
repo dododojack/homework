@@ -10,6 +10,9 @@
             background-color: #fff8f0;
             margin: 0;
             padding: 0;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
         header {
             background-color: #6a8caf;
@@ -26,6 +29,8 @@
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
         }
         h2 {
             text-align: center;
@@ -59,37 +64,30 @@
             background-color: #56789c;
         }
 
-        /* 新增圖片區容器 */
-        .image-container {
-            display: flex;
-            justify-content: space-between;
-            margin: 30px 0 40px;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .image-box {
-            flex: 1 1 45%;
-            text-align: center;
-        }
-        .image-box img {
-            max-width: 100%;
+        /* 左右圖片樣式 */
+        .side-image {
+            position: fixed;
+            top: 150px; /* 與header下方對齊 */
+            width: 150px;
+            max-width: 20vw;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 1;
         }
-        .caption {
-            margin-top: 8px;
-            font-weight: 600;
-            color: #6a8caf;
-            font-size: 1em;
+        .side-image.left {
+            left: calc(50% - 400px - 170px); /* 主框左側 - 圖片寬度 - 20px間距 */
+        }
+        .side-image.right {
+            right: calc(50% - 400px - 170px); /* 主框右側 - 圖片寬度 - 20px間距 */
         }
 
-        /* 窄螢幕下堆疊 */
-        @media (max-width: 600px) {
-            .image-container {
-                flex-direction: column;
+        /* 小螢幕隱藏圖片，避免排版跑掉 */
+        @media (max-width: 900px) {
+            .side-image {
+                display: none;
             }
-            .image-box {
-                flex: 1 1 100%;
+            main {
+                margin: 40px 20px; /* 縮小main寬度 */
             }
         }
     </style>
@@ -99,6 +97,10 @@
         <h1>關於我</h1>
         <p>張仕誠的簡介與成長歷程</p>
     </header>
+
+    <!-- 左右側固定圖片 -->
+    <img src="img/work1.jpg" alt="第一張圖片" class="side-image left" />
+    <img src="img/work2.jpg" alt="第二張圖片" class="side-image right" />
 
     <main>
         <h2>我是誰？</h2>
@@ -113,19 +115,7 @@
         </ul>
 
         <h2>興趣與專長</h2>
-        <p>我對電腦程式非常有熱情，喜歡亂寫網站和學習新技術，也喜愛騎車跟朋友一起旅遊。</p>
-
-        <!-- 新增圖片區 -->
-        <div class="image-container">
-            <div class="image-box">
-                <img src="img/work1.jpg" alt="第一張圖片" />
-                <div class="caption">攝於七股</div>
-            </div>
-            <div class="image-box">
-                <img src="img/work2.jpg" alt="第二張圖片" />
-                <div class="caption">攝於民雄鬼屋</div>
-            </div>
-        </div>
+        <p>我對電腦程式非常有熱情，喜歡亂寫網站和學習新技術，也喜愛騎車。</p>
 
         <button onclick="location.href='index.html'">返回首頁</button>
     </main>
