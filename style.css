@@ -92,11 +92,37 @@ header h1, header p {
     z-index: 10; /* 加上這行，確保圖片比 main-wrapper 高 */
 }
 
+.side-image-wrapper.left {
+    left: 20px;
+}
+
+.side-image-wrapper.right {
+    right: 20px;
+}
+
+.side-image-wrapper .caption {
+    position: absolute;
+    bottom: -35px; /* 讓文字在圖片下方 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 220px;
+    background-color: rgba(255,255,255,0.85);
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    white-space: normal;
+    z-index: 11;
+}
+
 
 .side-image.left {
     position: fixed;
     top: 50%;
-    left: 20px;
+    left: 20px;       /* 固定在左邊 */
     width: 220px;
     height: auto;
     border-radius: 12px;
@@ -109,7 +135,7 @@ header h1, header p {
 .side-image.right {
     position: fixed;
     top: 50%;
-    right: 20px;
+    right: 20px;      /* 固定在右邊 */
     width: 220px;
     height: auto;
     border-radius: 12px;
@@ -120,39 +146,7 @@ header h1, header p {
 }
 
 
-.side-image.left + .caption {
-    position: fixed;
-    top: calc(50% + 120px); /* 圖片高度一半約110~120px */
-    left: 20px;
-    width: 220px;
-    text-align: center;
-    color: #333;
-    background-color: rgba(255,255,255,0.85);
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    z-index: 10;
-    transform: translateY(-50%);
-}
 
-.side-image.right + .caption {
-    position: fixed;
-    top: calc(50% + 120px);
-    right: 20px;
-    width: 220px;
-    text-align: center;
-    color: #333;
-    background-color: rgba(255,255,255,0.85);
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    z-index: 10;
-    transform: translateY(-50%);
-}
 
 /* 圖片 */
 .side-image {
