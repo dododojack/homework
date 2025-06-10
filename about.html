@@ -31,6 +31,7 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             position: relative;
             z-index: 2;
+            box-sizing: border-box;
         }
         h2 {
             text-align: center;
@@ -64,30 +65,71 @@
             background-color: #56789c;
         }
 
-        /* 左右圖片樣式 */
+        /* 左右側固定圖片 */
         .side-image {
             position: fixed;
-            top: 150px; /* 與header下方對齊 */
+            top: 150px; /* 與 header 下方對齊 */
             width: 150px;
             max-width: 20vw;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             z-index: 1;
+            object-fit: cover;
+            height: auto;
         }
+        /* 貼齊主框框左右邊 */
         .side-image.left {
-            left: calc(50% - 400px - 170px); /* 主框左側 - 圖片寬度 - 20px間距 */
+            left: calc(50% - 400px - 150px); /* 50% - 主框寬400 - 圖寬150 */
         }
         .side-image.right {
-            right: calc(50% - 400px - 170px); /* 主框右側 - 圖片寬度 - 20px間距 */
+            right: calc(50% - 400px - 150px);
         }
 
-        /* 小螢幕隱藏圖片，避免排版跑掉 */
+        /* 下方多張圖片區塊 */
+        .bottom-images {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .bottom-images .image-box {
+            flex: 1 1 calc(25% - 15px);
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .bottom-images img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            object-fit: cover;
+            max-height: 150px;
+        }
+        .caption {
+            margin-top: 8px;
+            font-weight: 600;
+            color: #6a8caf;
+        }
+
+        /* 小螢幕調整 */
         @media (max-width: 900px) {
             .side-image {
                 display: none;
             }
             main {
-                margin: 40px 20px; /* 縮小main寬度 */
+                margin: 40px 20px;
+            }
+            .bottom-images {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .bottom-images .image-box {
+                flex: none;
+                width: 100%;
+            }
+            .bottom-images img {
+                max-height: none;
+                height: auto;
             }
         }
     </style>
@@ -115,7 +157,28 @@
         </ul>
 
         <h2>興趣與專長</h2>
-        <p>我對電腦程式非常有熱情，喜歡亂寫網站和學習新技術，也喜愛騎車。</p>
+        <p>我對電腦程式非常有熱情，喜歡亂寫網站和學習新技術，也喜愛騎車，拍照。</p>
+        <p>以後想考取消防警察，目前已考取EMT-1(緊急救護初級急救員)</p>
+
+        <!-- 下方四張圖片 -->
+        <div class="bottom-images">
+            <div class="image-box">
+                <img src="img/work3.jpg" alt="第三張圖片" />
+                <div class="caption">第三張</div>
+            </div>
+            <div class="image-box">
+                <img src="img/work4.jpg" alt="第四張圖片" />
+                <div class="caption">第四張</div>
+            </div>
+            <div class="image-box">
+                <img src="img/work5.jpg" alt="第五張圖片" />
+                <div class="caption">第五張</div>
+            </div>
+            <div class="image-box">
+                <img src="img/work6.jpg" alt="第六張圖片" />
+                <div class="caption">第六張</div>
+            </div>
+        </div>
 
         <button onclick="location.href='index.html'">返回首頁</button>
     </main>
