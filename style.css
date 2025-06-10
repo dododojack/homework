@@ -93,27 +93,22 @@ header h1, header p {
 /* 左右圖片：貼近 main 框兩側 */
 /* 左右側圖片，貼齊 main 的左右空白，並放大 */
 .side-image {
-    position: fixed;       /* 固定在視窗 */
-    top: 50%;              /* 垂直置中 */
-    width: 500px;          /* 放大50% */
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%); /* 先水平、垂直都往左上移50%寬高，讓定位點變成中點 */
     height: auto;
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    z-index: 0;
+    z-index: 10;
     object-fit: cover;
-    transform: translate(-50%, -50%); /* 水平垂直都置中 */
 }
 
 .side-image.left {
-    left: 25%;             /* 視窗左半區中間 */
-    width: 400px;          /* 放大50% */
-
+    left: 25%;
+    width: 450px; /* 放大50%(假設原來是 300px) */
 }
 
 .side-image.right {
     left: 75%;
-                 /* 視窗右半區中間 */
-    width: 500px;          /* 放大50% */
-             
+    width: 450px;
 }
-
