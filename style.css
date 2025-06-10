@@ -95,20 +95,19 @@ header h1, header p {
 .side-image {
     position: fixed;       /* 固定在視窗 */
     top: 50%;              /* 垂直置中 */
-    width: 270px;          /* 放大50% */
     height: auto;
+    width: 270px;          /* 放大50% */
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     z-index: 0;
     object-fit: cover;
-    transform: translate(-50%, -50%); /* 水平垂直都置中 */
+    transform: translateY(-50%); /* 只垂直置中 */
 }
 
 .side-image.left {
-    left: 25%;             /* 視窗左半區中間 */
+    left: 25%;             /* 靠左 25% */
 }
 
 .side-image.right {
-    left: 75%;             /* 視窗右半區中間 */
+    right: 25%;            /* 靠右 25% */
 }
-
