@@ -95,19 +95,43 @@ header h1, header p {
 .side-image {
     position: fixed;
     top: 50%;
-    width: 270px;
+    width: 220px;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     z-index: 0;
     object-fit: cover;
     transform: translateY(-50%);
 }
 
 .side-image.left {
-    left: 25%;
+    left: 20px; /* 靠左邊，不要用百分比 */
 }
 
 .side-image.right {
-    right: 25%;
+    right: 20px; /* 靠右邊 */
+}
+
+.caption {
+    position: fixed;
+    color: #333;
+    background-color: rgba(255,255,255,0.85);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.side-image-wrapper:first-child .caption {
+    top: 75%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.side-image-wrapper:last-child .caption {
+    top: 75%;
+    right: 20px;
+    transform: translateY(-50%);
 }
