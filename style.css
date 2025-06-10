@@ -5,17 +5,17 @@ body {
     text-align: center;
     padding: 50px;
     margin: 0;
-  }
-  
-  /* 標題 */
-  h1 {
+}
+
+/* 標題 */
+h1 {
     font-size: 28px;
     margin-bottom: 40px;
     color: #222;
-  }
-  
-  /* 導覽列按鈕 */
-  a {
+}
+
+/* 導覽列按鈕 */
+a {
     display: inline-block;
     color: white;
     background-color: #1e40af; /* 深藍 */
@@ -27,27 +27,28 @@ body {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     font-weight: bold;
-  }
-  
-  /* 滑鼠移上去的效果 */
-  a:hover {
+}
+
+/* 滑鼠移上去的效果 */
+a:hover {
     background-color: #2563eb; /* 淺一點的藍 */
     transform: translateY(-2px);
-  }
-  
-  /* 特別處理 react 按鈕 */
-  a[href*="react"] {
+}
+
+/* 特別處理 react 按鈕 */
+a[href*="react"] {
     background-color: crimson;
-  }
-  
-  a[href*="react"]:hover {
+}
+
+a[href*="react"]:hover {
     background-color: #e53935;
-  }
-  
-  button {
+}
+
+/* 按鈕 */
+button {
     display: inline-block;
     color: white;
-    background-color: #1e40af; /* 深藍 */
+    background-color: #1e40af;
     text-decoration: none;
     padding: 10px 16px;
     margin: 5px;
@@ -56,10 +57,10 @@ body {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     font-weight: bold;
+}
 
-  }
-
-  .highlight-box {
+/* 首頁反白框 */
+.highlight-box {
     display: inline-block;
     background-color: white;
     color: #6a8caf;
@@ -69,6 +70,7 @@ body {
     font-weight: 600;
     line-height: 1.4;
 }
+
 header {
     background-color: #6a8caf;
     text-align: center;
@@ -76,6 +78,40 @@ header {
     border-radius: 0 0 15px 15px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
 header h1, header p {
     margin: 0;
+}
+
+/* 主要框包裹區塊，用於相對定位 side-image */
+.main-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 左右圖片：貼近 main 框兩側 */
+.side-image {
+    position: absolute;
+    top: 50px;
+    width: 150px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    object-fit: cover;
+    z-index: 0;
+}
+
+.side-image.left {
+    left: -170px; /* 貼近 main 左邊 */
+}
+
+.side-image.right {
+    right: -170px; /* 貼近 main 右邊 */
+}
+
+/* 小螢幕自動隱藏圖片 */
+@media (max-width: 1000px) {
+    .side-image {
+        display: none;
+    }
 }
