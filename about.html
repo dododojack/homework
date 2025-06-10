@@ -65,26 +65,6 @@
             background-color: #56789c;
         }
 
-        /* 左右側固定圖片 */
-        .side-image {
-            position: fixed;
-            top: 150px; /* 與 header 下方對齊 */
-            width: 150px;
-            max-width: 20vw;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            z-index: 1;
-            object-fit: cover;
-            height: auto;
-        }
-        /* 貼齊主框框左右邊 */
-        .side-image.left {
-            left: calc(50% - 400px - 150px); /* 50% - 主框寬400 - 圖寬150 */
-        }
-        .side-image.right {
-            right: calc(50% - 400px - 150px);
-        }
-
         /* 下方多張圖片區塊 */
         .bottom-images {
             margin-top: 40px;
@@ -148,14 +128,13 @@
     <div class="main-wrapper">
         <!-- 左右圖片貼近 main -->
 <!-- 左右側圖片應放在 <body> 裡，但在 <main> 前 -->
-    <img src="img/work1.jpg" alt="左圖" class="side-image left">
-    <img src="img/work2.jpg" alt="右圖" class="side-image right">
-    
-    
-        <main>
-            <!-- 原本 main 內容不變 -->
-        </main>
-    </div>
+<!-- 放在 .main-wrapper 外，這樣才會以整個畫面為座標計算 calc -->
+<img src="img/work1.jpg" alt="左圖" class="side-image left">
+<img src="img/work2.jpg" alt="右圖" class="side-image right">
+
+<div class="main-wrapper">
+</div>
+
 
     <main>
         <h2>我是誰？</h2>
