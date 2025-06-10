@@ -1,5 +1,4 @@
 <!DOCTYPE html> 
-<!-- 123 -->
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8" />
@@ -22,6 +21,8 @@
             text-align: center;
             border-radius: 0 0 15px 15px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
         }
         main {
             max-width: 800px;
@@ -66,6 +67,35 @@
             background-color: #56789c;
         }
 
+        /* 左右側固定圖片 */
+        .side-image-wrapper {
+            position: fixed;
+            top: 100px;
+            width: 140px;
+            box-sizing: border-box;
+            text-align: center;
+            z-index: 5;
+        }
+        .side-image-wrapper.left {
+            left: 20px;
+        }
+        .side-image-wrapper.right {
+            right: 20px;
+        }
+        .side-image-wrapper img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            object-fit: cover;
+            max-height: 200px;
+        }
+        .side-image-wrapper .caption {
+            margin-top: 8px;
+            font-weight: 600;
+            color: #6a8caf;
+            font-size: 0.9em;
+        }
+
         /* 下方多張圖片區塊 */
         .bottom-images {
             margin-top: 40px;
@@ -94,7 +124,7 @@
 
         /* 小螢幕調整 */
         @media (max-width: 900px) {
-            .side-image {
+            .side-image-wrapper {
                 display: none;
             }
             main {
@@ -112,7 +142,6 @@
                 max-height: none;
                 height: auto;
             }
-            
         }
     </style>
 </head>
@@ -124,26 +153,16 @@
         </div>
     </header>
     
-
     <!-- 左右側固定圖片 -->
-    <div class="main-wrapper">
-
-        <div class="side-image-wrapper left">
-            <img src="img/work1.jpg" alt="左圖" class="side-image">
-            <div class="caption">攝於民雄鬼屋</div>
-        </div>
-        
-        <div class="side-image-wrapper right">
-            <img src="img/work2.jpg" alt="右圖" class="side-image">
-            <div class="caption">攝於七股最北邊廁所</div>
-        </div>
-        
-        
-  
-
-<div class="main-wrapper">
-</div>
-
+    <div class="side-image-wrapper left">
+        <img src="img/work1.jpg" alt="左圖" />
+        <div class="caption">攝於民雄鬼屋</div>
+    </div>
+    
+    <div class="side-image-wrapper right">
+        <img src="img/work2.jpg" alt="右圖" />
+        <div class="caption">攝於七股最北邊廁所</div>
+    </div>
 
     <main>
         <h2>我是誰？</h2>
@@ -155,10 +174,8 @@
         <ul>
             <li>108 年全國預賽資格</li>
             <li>108 年全國決賽 國中 A 組 — 優等</li>
-            
             <li>109 年全國預賽資格</li>
             <li>109 年全國決賽 國中 A 組 — 優等</li>
-
             <li>前往許多場地演出</li>
         </ul>
 
@@ -187,7 +204,6 @@
         </div>
 
         <button onclick="location.href='index.html'">返回首頁</button>
-        <!-- <button onclick="location.href='photo.html'">前往相機拍攝相片</button> -->
     </main>
 </body>
 </html>
