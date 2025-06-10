@@ -103,17 +103,22 @@ header h1, header p {
     object-fit: cover;
 }
 
+.side-image {
+    position: absolute;
+    width: 216px; /* 原180px * 1.2 = 放大20% */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 0;
+    object-fit: cover;
+    top: 660px; /* 你可以根據實際位置再微調，讓圖片上下位置對齊「音樂經歷」區塊 */
+}
+
 .side-image.left {
-    left: calc((100% - 800px) / 2 - 190px); /* 圖片貼齊 main 左邊，留一點 margin */
+    left: calc((100% - 800px) / 2 - 230px); /* 調整為貼齊 main 左側，並留 margin */
 }
 
 .side-image.right {
-    right: calc((100% - 800px) / 2 - 190px); /* 圖片貼齊 main 右邊 */
+    right: calc((100% - 800px) / 2 - 230px); /* 貼齊 main 右側 */
 }
 
-/* 小螢幕自動隱藏圖片 */
-@media (max-width: 1000px) {
-    .side-image {
-        display: none;
-    }
-}
