@@ -93,11 +93,11 @@ header h1, header p {
 }
 
 .side-image-wrapper.left {
-    left: 20px;
+    left: 100px;
 }
 
 .side-image-wrapper.right {
-    right: 20px;
+    right: 100px;
 }
 
 .side-image-wrapper .caption {
