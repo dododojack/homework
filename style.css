@@ -79,18 +79,19 @@ header h1, header p {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 280px; /* 預留左右空間給固定圖片 */
+    padding: 0 280px;
+    z-index: 5; /* 加上這行 */
 }
 
-/* 左右圖片容器 */
 .side-image-wrapper {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
     width: 220px;
     text-align: center;
-    z-index: 0;
+    z-index: 10; /* 加上這行，確保圖片比 main-wrapper 高 */
 }
+
 
 .side-image-wrapper.left {
     left: 20px;
