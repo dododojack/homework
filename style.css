@@ -123,7 +123,7 @@ header h1, header p {
     position: fixed;
     top: 50%;
     left: 50px;       /* 固定在左邊 */
-    width: 10000px;
+    width: 250px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
@@ -136,7 +136,7 @@ header h1, header p {
     position: fixed;
     top: 50%;
     right: 50px;      /* 固定在右邊 */
-    width: 1000px;
+    width: 400px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
