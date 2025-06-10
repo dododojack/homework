@@ -2,16 +2,95 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>作業</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            font-family: "微軟正黑體", Arial, sans-serif;
+            background: linear-gradient(135deg, #f9f7f1, #dbe6f1);
+            padding: 40px 20px;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #3a5a99;
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 3px rgba(58, 90, 153, 0.3);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto 50px auto;
+            max-width: 400px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        nav ul li a {
+            display: block;
+            background: linear-gradient(135deg, #4a90e2, #50e3c2);
+            color: white;
+            text-decoration: none;
+            padding: 18px 25px;
+            border-radius: 15px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            box-shadow: 0 6px 12px rgba(80, 227, 194, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            text-align: center;
+        }
+        nav ul li a:hover {
+            background: linear-gradient(135deg, #50e3c2, #4a90e2);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 20px rgba(80, 227, 194, 0.5);
+        }
+        button {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(254, 180, 123, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            user-select: none;
+        }
+        button:hover {
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 12px 25px rgba(254, 180, 123, 0.8);
+        }
+        /* 手機版微調 */
+        @media (max-width: 480px) {
+            nav ul li a {
+                font-size: 1.1rem;
+                padding: 15px 20px;
+            }
+            button {
+                width: 90%;
+                font-size: 1.1rem;
+                padding: 15px 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>作業列表</h1>
     <nav>
-        <a href="https://dododojack.github.io/04241/">水遊戲作業</a>
-        <a href="https://dododojack.github.io/react/">react作業</a>
-        <a href="assignment3.html">N*N乘法表作業</a>
-        <a href="assignment4.html">匿名聊天室</a>
+        <ul>
+            <li><a href="https://dododojack.github.io/04241/">水遊戲作業</a></li>
+            <li><a href="https://dododojack.github.io/react/">react作業</a></li>
+            <li><a href="assignment3.html">N*N乘法表作業</a></li>
+            <li><a href="assignment4.html">匿名聊天室</a></li>
+        </ul>
     </nav>
     <button onclick="location.href='index.html'">返回首頁</button>
 </body>
