@@ -136,7 +136,7 @@ header h1, header p {
     position: fixed;
     top: 50%;
     right: 20px;      /* 固定在右邊 */
-    width: 220px;
+    width: 280px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
