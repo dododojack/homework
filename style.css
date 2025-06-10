@@ -93,7 +93,7 @@ header h1, header p {
 }
 
 .side-image-wrapper.left {
-    left: 100px;
+    left: 150px;
 }
 
 .side-image-wrapper.right {
@@ -122,7 +122,7 @@ header h1, header p {
 .side-image.left {
     position: fixed;
     top: 50%;
-    left: 20px;       /* 固定在左邊 */
+    left: 50px;       /* 固定在左邊 */
     width: 10000px;
     height: auto;
     border-radius: 12px;
@@ -135,7 +135,7 @@ header h1, header p {
 .side-image.right {
     position: fixed;
     top: 50%;
-    right: 20px;      /* 固定在右邊 */
+    right: 50px;      /* 固定在右邊 */
     width: 1000px;
     height: auto;
     border-radius: 12px;
