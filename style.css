@@ -58,3 +58,24 @@ body {
     font-weight: bold;
 
   }
+
+  .highlight-box {
+    display: inline-block;
+    background-color: white;
+    color: #6a8caf;
+    padding: 10px 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(106,140,175,0.3);
+    font-weight: 600;
+    line-height: 1.4;
+}
+header {
+    background-color: #6a8caf;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+header h1, header p {
+    margin: 0;
+}
