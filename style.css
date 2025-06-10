@@ -36,13 +36,13 @@ a:hover {
 }
 
 /* 特別處理 react 按鈕 */
-a[href*="react"] {
+/* a[href*="react"] {
     background-color: crimson;
 }
 
 a[href*="react"]:hover {
     background-color: #e53935;
-}
+} */
 
 /* 按鈕 */
 button {
