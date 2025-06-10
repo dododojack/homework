@@ -35,15 +35,6 @@ a:hover {
     transform: translateY(-2px);
 }
 
-/* 特別處理 react 按鈕 */
-/* a[href*="react"] {
-    background-color: crimson;
-}
-
-a[href*="react"]:hover {
-    background-color: #e53935;
-} */
-
 /* 按鈕 */
 button {
     display: inline-block;
@@ -88,32 +79,40 @@ header h1, header p {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 280px; /* 預留左右空間給固定圖片 */
 }
 
-/* 左右圖片：貼近 main 框兩側 */
-/* 左右側圖片，貼齊 main 的左右空白，並放大 */
-.side-image {
+/* 左右圖片容器 */
+.side-image-wrapper {
     position: fixed;
     top: 50%;
+    transform: translateY(-50%);
     width: 220px;
+    text-align: center;
+    z-index: 0;
+}
+
+.side-image-wrapper.left {
+    left: 20px;
+}
+
+.side-image-wrapper.right {
+    right: 20px;
+}
+
+/* 圖片 */
+.side-image {
+    width: 100%;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    z-index: 0;
     object-fit: cover;
-    transform: translateY(-50%);
+    display: block;
 }
 
-.side-image.left {
-    left: 20px; /* 靠左邊，不要用百分比 */
-}
-
-.side-image.right {
-    right: 20px; /* 靠右邊 */
-}
-
+/* 圖片說明文字 */
 .caption {
-    position: fixed;
+    margin-top: 8px;
     color: #333;
     background-color: rgba(255,255,255,0.85);
     padding: 6px 12px;
@@ -121,17 +120,6 @@ header h1, header p {
     font-size: 14px;
     font-weight: 500;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    z-index: 1;
-}
-
-.side-image-wrapper:first-child .caption {
-    top: 75%;
-    left: 20px;
-    transform: translateY(-50%);
-}
-
-.side-image-wrapper:last-child .caption {
-    top: 75%;
-    right: 20px;
-    transform: translateY(-50%);
+    display: inline-block;
+    max-width: 100%;
 }
