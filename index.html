@@ -1,103 +1,137 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Javascript程式設計範例 - 首頁</title>
-    <link rel="stylesheet" href="style.css" crossorigin />
-    <style>
-        body {
-            font-family: "微軟正黑體", Arial, sans-serif;
-            background: #f0f4f8;
-            color: #333;
-            margin: 0;
-            padding: 0 20px;
-        }
-        header {
-            background-color: #00b7ff;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 0 0 15px 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        nav {
-            margin-top: 20px;
-            text-align: center;
-        }
-        nav a {
-            display: inline-block;
-            margin: 0 15px;
-            padding: 10px 20px;
-            background-color: #1e40af;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        nav a:hover {
-            background-color: #357abd;
-        }
-        main {
-    max-width: 800px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2); /* 陰影更深更明顯 */
-    border: 2px solid #ccc; /* 加個淡灰色邊框 */
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>張仕誠的個人網站</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: "微軟正黑體", "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+      color: #333;
+    }
 
-        main h2 {
-            text-align: center;
-            color: #1e40af;
-            margin-bottom: 20px;
-        }
-        main p {
-            line-height: 1.6;
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
-        .welcome-img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin: 0 auto 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-        }
-        footer {
-            text-align: center;
-            color: #999;
-            margin: 50px 0 30px;
-            font-size: 0.9em;
-        }
-    </style>
+    header {
+      background: #2196f3;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 0 0 25px 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin: 0 0 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 10px 15px;
+      padding: 12px 24px;
+      background-color: #1e88e5;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #1565c0;
+      transform: scale(1.05);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    main h2 {
+      color: #1e40af;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      font-size: 1.1em;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .welcome-img {
+      width: 100%;
+      max-width: 720px;
+      border-radius: 15px;
+      margin: 0 auto 30px;
+      display: block;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+      }
+
+      main {
+        padding: 30px 20px;
+      }
+
+      header h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="highlight-box">
-        <h1>張仕誠的個人網站</h1>
-        <p>歡迎來到我的學習與作品展示平台</p>
-    </header>
-    
-    <nav>
-        <a href="about.html">關於我</a>
-        <a href="assignments.html">作業</a>
-    </nav>
+  <header>
+    <h1>張仕誠的個人網站</h1>
+    <p>歡迎來到我的學習與作品展示平台</p>
+  </header>
 
-    <main>
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="歡迎圖片" class="welcome-img" />
-        
-        <h2>歡迎來到我的個人網站！</h2>
-        <p>這個網站記錄了我學習程式設計的過程與心得，包含關於我個人的介紹與各種作業展示。</p>
-        <p>我對程式設計與電腦科學充滿熱情，也喜歡分享我的學習成果。希望你能在這裡找到你感興趣的內容！</p>
-        <p>請透過上方選單瀏覽「關於我」與「作業」頁面，了解更多我的背景與作品。</p>
-    </main>
+  <nav>
+    <a href="about.html">關於我</a>
+    <a href="assignments.html">作業</a>
+  </nav>
 
-    <footer>
-        &copy; 2025 張仕誠
-    </footer>
+  <main>
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="歡迎圖片" class="welcome-img" />
+
+    <h2>歡迎來到我的個人網站！</h2>
+    <p>這個網站記錄了我學習程式設計的過程與心得，包含關於我個人的介紹與各種作業展示。</p>
+    <p>我對程式設計與電腦科學充滿熱情，也喜歡分享我的學習成果。希望你能在這裡找到你感興趣的內容！</p>
+    <p>請透過上方選單瀏覽「關於我」與「作業」頁面，了解更多我的背景與作品。</p>
+  </main>
+
+  <footer>
+    &copy; 2025 張仕誠
+  </footer>
 </body>
 </html>
