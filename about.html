@@ -1,78 +1,164 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <title>關於我</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>關於我</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* 固定側邊導覽列 */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 160px;
+      height: 100%;
+      background-color: #1f2937;
+      padding-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .sidebar a {
+      display: block;
+      width: 120px;
+      text-align: center;
+      padding: 10px 0;
+      background-color: #4b5563;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #111827;
+    }
+
+    /* 調整主區塊的內距以避免被側欄遮住 */
+    .main-wrapper {
+      margin-left: 180px;
+      padding: 20px;
+    }
+
+    .side-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .caption {
+      text-align: center;
+      font-size: 0.95em;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    .bottom-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .image-box {
+      flex: 1 1 calc(25% - 20px);
+      min-width: 180px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        position: static;
+        padding: 10px;
+      }
+
+      .main-wrapper {
+        margin-left: 0;
+      }
+
+      .bottom-images {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- 固定左側導覽欄 -->
+  <div class="sidebar">
+    <a href="index.html">🏠 首頁</a>
+    <a href="resume.html">📄 履歷</a>
+    <a href="reflection.html">📝 心得</a>
+  </div>
+
+  <!-- 主要內容區 -->
+  <div class="main-wrapper">
     <header>
-        <div class="highlight-box">
-            <h1>關於我</h1>
-            <p>張仕誠的簡介與成長歷程</p>
-        </div>
+      <div class="highlight-box">
+        <h1>關於我</h1>
+        <p>張仕誠的簡介與成長歷程</p>
+      </div>
     </header>
 
-    <!-- 左側固定圖片 -->
+    <!-- 左側圖片 -->
     <div class="side-image-wrapper left">
-        <img src="img/work1.jpg" alt="攝於民雄鬼屋" class="side-image left">
-        <div class="caption">攝於民雄鬼屋</div>
+      <img src="img/work1.jpg" alt="攝於民雄鬼屋" class="side-image">
+      <div class="caption">攝於民雄鬼屋</div>
     </div>
 
-    <!-- 右側固定圖片 -->
+    <!-- 右側圖片 -->
     <div class="side-image-wrapper right">
-        <img src="img/work2.jpg" alt="攝於七股最北邊廁所" class="side-image right">
-        <div class="caption">攝於七股最北邊廁所</div>
+      <img src="img/work2.jpg" alt="攝於七股最北邊廁所" class="side-image">
+      <div class="caption">攝於七股最北邊廁所</div>
     </div>
 
-    <!-- 主要內容 -->
-    <div class="main-wrapper">
-        <main>
-            <h2>我是誰？</h2>
-            <p>我叫張仕誠，出生於民國96年3月12日（2007年），在台灣台南出生，目前 18 歲。</p>
-            <p>我曾就讀於台南市大新國小與新化國中，現就讀於南台科技大學五專部資訊工程三年級。</p>
+    <!-- 主內容 -->
+    <main>
+      <h2>我是誰？</h2>
+      <p>我叫張仕誠，出生於民國96年3月12日（2007年），在台灣台南出生，目前 18 歲。</p>
+      <p>我曾就讀於台南市大新國小與新化國中，現就讀於南台科技大學五專部資訊工程三年級。</p>
 
-            <h2>音樂經歷</h2>
-            <p>從國小到國中我都是管樂團成員，參加多場比賽，並取得以下佳績：</p>
-            <ul>
-                <li>108 年全國預賽資格</li>
-                <li>108 年全國決賽 國中 A 組 — 優等</li>
-                <li>109 年全國預賽資格</li>
-                <li>109 年全國決賽 國中 A 組 — 優等</li>
-                <li>前往許多場地演出</li>
-            </ul>
+      <h2>音樂經歷</h2>
+      <p>從國小到國中我都是管樂團成員，參加多場比賽，並取得以下佳績：</p>
+      <ul>
+        <li>108 年全國預賽資格</li>
+        <li>108 年全國決賽 國中 A 組 — 優等</li>
+        <li>109 年全國預賽資格</li>
+        <li>109 年全國決賽 國中 A 組 — 優等</li>
+        <li>前往許多場地演出</li>
+      </ul>
 
-            <h2>興趣與專長</h2>
-            <p>我對電腦程式非常有熱情，喜歡亂寫網站和學習新技術，也喜愛騎車，<br>相機攝影拍照及手機隨手記錄生活。</p>
-            <p>以後想考取消防警察，目前已考取 EMT-1(緊急救護初級急救員)</p>
+      <h2>興趣與專長</h2>
+      <p>我對電腦程式非常有熱情，喜歡亂寫網站和學習新技術，也喜愛騎車，<br>相機攝影拍照及手機隨手記錄生活。</p>
+      <p>以後想考取消防警察，目前已考取 EMT-1(緊急救護初級急救員)</p>
 
-            <!-- 四張圖片展示區 -->
-            <div class="bottom-images">
-                <div class="image-box">
-                    <img src="img/work3.jpg" alt="七股的日出" class="side-image">
-                    <div class="caption">攝於七股的日出</div>
-                </div>
-                <div class="image-box">
-                    <img src="img/work4.jpg" alt="台南沙漠" class="side-image">
-                    <div class="caption">攝於台南沙漠</div>
-                </div>
-                <div class="image-box">
-                    <img src="img/work5.jpg" alt="大崗山" class="side-image">
-                    <div class="caption">攝於大崗山</div>
-                </div>
-                <div class="image-box">
-                    <img src="img/work6.jpg" alt="親水公園" class="side-image">
-                    <div class="caption">攝於親水公園</div>
-                </div>
-            </div>
-
-            <!-- 按鈕導覽列 -->
-            <div class="button-group">
-                <a href="reflection.html" class="nav-button">心得</a>
-                <a href="index.html" class="nav-button">返回首頁</a>
-                <a href="resume.html" class="nav-button">履歷</a>
-            </div>
-        </main>
-    </div>
+      <!-- 圖片區塊 -->
+      <div class="bottom-images">
+        <div class="image-box">
+          <img src="img/work3.jpg" alt="七股的日出" class="side-image">
+          <div class="caption">攝於七股的日出</div>
+        </div>
+        <div class="image-box">
+          <img src="img/work4.jpg" alt="台南沙漠" class="side-image">
+          <div class="caption">攝於台南沙漠</div>
+        </div>
+        <div class="image-box">
+          <img src="img/work5.jpg" alt="大崗山" class="side-image">
+          <div class="caption">攝於大崗山</div>
+        </div>
+        <div class="image-box">
+          <img src="img/work6.jpg" alt="親水公園" class="side-image">
+          <div class="caption">攝於親水公園</div>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
