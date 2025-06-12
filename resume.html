@@ -3,36 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <title>履歷 – 張仕誠</title>
-  <link rel="stylesheet" href="style.css">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
     body {
       font-family: 'Noto Sans TC', sans-serif;
-      background-color: #f3f4f6;
-      color: #333;
       margin: 0;
       padding: 40px 20px;
+      background: linear-gradient(135deg, #e0f2fe, #f3f4f6);
+      color: #333;
     }
 
     .container {
       max-width: 880px;
       margin: auto;
       background-color: #ffffff;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      padding: 48px;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e5e7eb;
     }
 
     h1 {
-      font-size: 2.2em;
+      font-size: 2.4em;
       color: #1e3a8a;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     h2 {
       color: #1e40af;
       margin-top: 40px;
       font-size: 1.5em;
-      border-bottom: 2px solid #e0e7ff;
+      border-bottom: 2px solid #c7d2fe;
       padding-bottom: 6px;
     }
 
@@ -86,24 +88,28 @@
       border-radius: 8px;
       font-size: 1em;
       transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     .nav-button:hover {
       background-color: #1f2937;
+      transform: translateY(-2px);
     }
+
     @media print {
-    .nav-button {
-      display: none !important;
+      .nav-button {
+        display: none !important;
+      }
+      body {
+        background: white !important;
+      }
+      .container {
+        box-shadow: none !important;
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
     }
-    body {
-      background: white !important;
-    }
-    .container {
-      box-shadow: none !important;
-      margin: 0;
-      padding: 0;
-    }
-  }
   </style>
 </head>
 <body>
@@ -147,9 +153,8 @@
       <a href="index.html" class="nav-button">🏠 返回首頁</a>
       <a href="about.html" class="nav-button">關於我</a>
       <a href="assignments.html" class="nav-button">作業列表</a>
+      <a href="#" class="nav-button" onclick="window.print()">📄 下載 PDF</a>
     </div>
   </div>
-  <a href="#" class="nav-button" onclick="window.print()">📄 下載 PDF</a>
-
 </body>
 </html>
