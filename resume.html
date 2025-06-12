@@ -5,15 +5,105 @@
   <title>履歷 – 張仕誠</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body { font-family: 'Noto Sans TC', sans-serif; background: #f9fafb; color: #333; margin:0; padding:20px; }
-    .container { max-width:800px; margin:40px auto; background:#fff; padding:30px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); }
-    h1 { font-size:2em; margin-bottom:10px; }
-    h2 { color:#1e40af; margin-top:30px; font-size:1.4em; }
-    .section { margin-top:20px; }
-    .info p { margin:4px 0; }
-    ul { margin:10px 0 0 20px; }
-    .nav-button { display:inline-block; margin:20px 10px 0; padding:10px 20px; background:#6a8caf; color:#fff; text-decoration:none; border-radius:8px; transition:0.3s; }
-    .nav-button:hover { background:#56789c; }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f3f4f6;
+      color: #333;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #1e40af;
+      margin-top: 40px;
+      font-size: 1.5em;
+      border-bottom: 2px solid #e0e7ff;
+      padding-bottom: 6px;
+    }
+
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 1.05em;
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      margin: 0;
+    }
+
+    .info a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .info a:hover {
+      text-decoration: underline;
+    }
+
+    p, li {
+      font-size: 1.05em;
+      line-height: 1.8;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 25px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    strong {
+      color: #111827;
+    }
+
+    .nav-button {
+      display: inline-block;
+      margin-top: 30px;
+      margin-right: 12px;
+      padding: 10px 20px;
+      background-color: #4b5563;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: all 0.3s ease;
+    }
+
+    .nav-button:hover {
+      background-color: #1f2937;
+    }
+    @media print {
+    .nav-button {
+      display: none !important;
+    }
+    body {
+      background: white !important;
+    }
+    .container {
+      box-shadow: none !important;
+      margin: 0;
+      padding: 0;
+    }
+  }
   </style>
 </head>
 <body>
@@ -22,8 +112,7 @@
     <div class="info">
       <p>📞 09xx-xxx-xxx</p>
       <p>✉️ email@example.com</p>
-      <p>🌐 GitHub: <a href="https://github.com/dododojack">dododojack</a></p>
-      <!-- 可加 LinkedIn / 個人網站 -->
+      <p>🌐 GitHub: <a href="https://github.com/dododojack" target="_blank">dododojack</a></p>
     </div>
 
     <h2>自我介紹</h2>
@@ -31,14 +120,15 @@
 
     <h2>專案／工作經驗</h2>
     <ul>
-      <li><strong>匿名聊天室（Flask + SQLite）</strong> – 建立單機匿名聊天室，可新增留言，實作資料庫建置與 CRUD 操作。</li>
-      <li><strong>N × N 乘法表網頁</strong> – 使用純 JS 自動產生乘法表，練習 DOM 操控與事件處理。</li>
-      <!-- 其他作業或專題 -->
+      <li><strong>匿名聊天室（Flask + SQLite）</strong> — 建立單機匿名聊天室，可新增留言，實作資料庫建置與 CRUD 操作。</li>
+      <li><strong>N × N 乘法表網頁</strong> — 使用純 JS 自動產生乘法表，練習 DOM 操控與事件處理。</li>
     </ul>
 
     <h2>學歷</h2>
-    <p>南台科技大學 資訊工程 五專三年級（2025‑現）</p>
-    <p>台南市大新國小、新化國中</p>
+    <ul>
+      <li>南台科技大學 資訊工程 五專三年級（2025‑現）</li>
+      <li>台南市大新國小、新化國中</li>
+    </ul>
 
     <h2>技能與證照</h2>
     <ul>
@@ -59,5 +149,7 @@
       <a href="assignments.html" class="nav-button">作業列表</a>
     </div>
   </div>
+  <a href="#" class="nav-button" onclick="window.print()">📄 下載 PDF</a>
+
 </body>
 </html>
