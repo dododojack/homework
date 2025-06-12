@@ -1,240 +1,9 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8" />
     <title>關於我</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
-
-        /* Reset & 基本字體 */
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
-            background: linear-gradient(135deg, #fceabb, #f8b255);
-            margin: 0;
-            padding: 0;
-            position: relative;
-            min-height: 100vh;
-            overflow-x: hidden;
-            color: #444;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* header */
-        header {
-            background-color: #6abe6b;
-            color: white;
-            padding: 36px 20px 40px;
-            text-align: center;
-            border-radius: 0 0 25px 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-            letter-spacing: 0.06em;
-        }
-        header h1 {
-            font-size: 3.2em;
-            margin: 0 0 8px;
-            font-weight: 900;
-            text-shadow: 1px 2px 6px rgba(0,0,0,0.15);
-        }
-        header p {
-            font-size: 1.3em;
-            font-weight: 600;
-            opacity: 0.85;
-        }
-
-        /* 左右側固定圖片 */
-        .side-image-wrapper {
-            position: fixed;
-            top: 150px;
-            width: 180px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            background: white;
-            z-index: 10;
-            transition: transform 0.3s ease;
-        }
-        .side-image-wrapper.left {
-            left: 20px;
-        }
-        .side-image-wrapper.right {
-            right: 20px;
-        }
-        .side-image-wrapper:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
-        }
-        .side-image-wrapper img {
-            width: 100%;
-            display: block;
-            object-fit: cover;
-            height: 220px;
-        }
-        .side-image-wrapper .caption {
-            text-align: center;
-            padding: 8px 6px;
-            font-weight: 700;
-            font-size: 0.9em;
-            color: #4b6fa9;
-            background: #f0f7ff;
-            user-select: none;
-        }
-
-        /* main 主要區塊 */
-        main {
-            max-width: 760px;
-            background-color: white;
-            margin: 60px auto 80px;
-            padding: 40px 36px 60px;
-            border-radius: 25px;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 5;
-        }
-        main h2 {
-            text-align: center;
-            color: #3f5ea7;
-            margin-bottom: 30px;
-            font-weight: 700;
-            font-size: 2em;
-            letter-spacing: 0.03em;
-            border-bottom: 3px solid #6a8caf;
-            padding-bottom: 6px;
-        }
-        main p {
-            font-size: 1.15em;
-            line-height: 1.75;
-            margin-bottom: 24px;
-            color: #555;
-            letter-spacing: 0.015em;
-        }
-        main ul {
-            padding-left: 24px;
-            margin-bottom: 32px;
-            color: #555;
-            font-weight: 600;
-        }
-        main ul li {
-            margin-bottom: 12px;
-            list-style-type: disc;
-            letter-spacing: 0.01em;
-        }
-
-        /* 下方四張圖片 */
-        .bottom-images {
-            margin-top: 40px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .bottom-images .image-box {
-            flex: 1 1 calc(25% - 15px);
-            text-align: center;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 22px rgba(0,0,0,0.15);
-            background: white;
-            transition: transform 0.3s ease;
-        }
-        .bottom-images .image-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 38px rgba(0,0,0,0.25);
-        }
-        .bottom-images img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            display: block;
-            border-bottom: 3px solid #6a8caf;
-        }
-        .bottom-images .caption {
-            margin: 10px 0 14px;
-            font-weight: 700;
-            color: #5278c2;
-            user-select: none;
-            letter-spacing: 0.02em;
-        }
-
-        /* 按鈕組 */
-        .button-group {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-top: 48px;
-        }
-        .nav-button {
-            display: inline-block;
-            padding: 14px 28px;
-            background: linear-gradient(135deg, #5c7cfa, #3b5bdb);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.1em;
-            font-weight: 700;
-            box-shadow: 0 8px 20px rgba(59, 91, 219, 0.4);
-            transition: all 0.3s ease;
-            user-select: none;
-        }
-        .nav-button:hover,
-        .nav-button:focus {
-            background: linear-gradient(135deg, #3b5bdb, #1e40af);
-            box-shadow: 0 12px 30px rgba(30, 64, 175, 0.6);
-            transform: translateY(-4px);
-            outline: none;
-        }
-
-        /* 手機響應式 */
-        @media (max-width: 900px) {
-            .side-image-wrapper {
-                display: none;
-            }
-            main {
-                margin: 40px 20px 60px;
-                padding: 30px 20px 40px;
-                border-radius: 20px;
-                box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            }
-            main h2 {
-                font-size: 1.7em;
-                margin-bottom: 24px;
-            }
-            main p,
-            main ul {
-                font-size: 1em;
-                margin-bottom: 20px;
-            }
-            .bottom-images {
-                flex-direction: column;
-                gap: 30px;
-            }
-            .bottom-images .image-box {
-                flex: none;
-                width: 100%;
-                border-radius: 15px;
-                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            }
-            .bottom-images img {
-                height: auto;
-                max-height: 260px;
-            }
-            .button-group {
-                flex-direction: column;
-                gap: 20px;
-            }
-            .nav-button {
-                width: 100%;
-                text-align: center;
-                padding: 14px 0;
-                font-size: 1.1em;
-                border-radius: 30px;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -244,16 +13,68 @@
         </div>
     </header>
 
-    <!-- 左右側固定圖片 -->
-    <div class="side-image-wrapper left">
-        <img src="img/work1.jpg" alt="左圖" class="side-image" />
-        <div class="caption">攝於民雄鬼屋</div>
-    </div>
+    <!-- 主內容包裝區塊，包含側邊圖片與主文 -->
+    <div class="main-wrapper">
 
-    <div class="side-image-wrapper right">
-        <img src="img/work2.jpg" alt="右圖" class="side-image" />
-        <div class="caption">攝於七股最北邊廁所</div>
-    </div>
+        <!-- 左側圖片 -->
+        <div class="side-image-wrapper left">
+            <img src="img/work1.jpg" alt="左圖" class="side-image left">
+            <div class="caption">攝於民雄鬼屋</div>
+        </div>
 
-    <main>
-       
+        <!-- 右側圖片 -->
+        <div class="side-image-wrapper right">
+            <img src="img/work2.jpg" alt="右圖" class="side-image right">
+            <div class="caption">攝於七股最北邊廁所</div>
+        </div>
+
+        <!-- 主要內容 -->
+        <main>
+            <h2>我是誰？</h2>
+            <p>我叫張仕誠，出生於民國96年3月12日（2007年），在台灣台南出生，目前 18 歲。</p>
+            <p>我曾就讀於台南市大新國小與新化國中，現就讀於南台科技大學五專部資訊工程三年級。</p>
+
+            <h2>音樂經歷</h2>
+            <p>從國小到國中我都是管樂團成員，參加多場比賽，並取得以下佳績：</p>
+            <ul>
+                <li>108 年全國預賽資格</li>
+                <li>108 年全國決賽 國中 A 組 — 優等</li>
+                <li>109 年全國預賽資格</li>
+                <li>109 年全國決賽 國中 A 組 — 優等</li>
+                <li>前往許多場地演出</li>
+            </ul>
+
+            <h2>興趣與專長</h2>
+            <p>我對電腦程式非常有熱情，喜歡亂寫網站和學習新技術，也喜愛騎車，<br>相機攝影拍照及手機隨手記錄生活。</p>
+            <p>以後想考取消防警察，目前已考取 EMT-1(緊急救護初級急救員)</p>
+
+            <!-- 四張圖片 -->
+            <div class="bottom-images">
+                <div class="image-box">
+                    <img src="img/work3.jpg" alt="第三張圖片" />
+                    <div class="caption">攝於七股的日出</div>
+                </div>
+                <div class="image-box">
+                    <img src="img/work4.jpg" alt="第四張圖片" />
+                    <div class="caption">攝於台南沙漠</div>
+                </div>
+                <div class="image-box">
+                    <img src="img/work5.jpg" alt="第五張圖片" />
+                    <div class="caption">攝於大崗山</div>
+                </div>
+                <div class="image-box">
+                    <img src="img/work6.jpg" alt="第六張圖片" />
+                    <div class="caption">攝於親水公園</div>
+                </div>
+            </div>
+
+            <!-- 導覽按鈕 -->
+            <div class="button-group">
+                <a href="reflection.html" class="nav-button">心得</a>
+                <a href="index.html" class="nav-button">返回首頁</a>
+                <a href="resume.html" class="nav-button">履歷</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
