@@ -10,7 +10,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #1f2937; /* 深色背景 */
+            background-color: #1f2937;
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -35,9 +35,9 @@
 
         /* 頁面主要內容頂部留空，避免被導覽欄擋住 */
         .main-wrapper {
-            margin-top: 60px; /* 與按鈕列高度相當 */
+            margin-top: 60px;
             padding: 20px;
-            background-color: #f7f7f7; /* 背景色 */
+            background-color: #f7f7f7;
             min-height: 100vh;
             font-family: "Microsoft JhengHei", sans-serif;
         }
@@ -63,15 +63,11 @@
             color: #374151;
         }
 
-        /* 調整圖片與說明居中 */
-        .side-image-wrapper {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
+        /* 固定照片大小並裁切 */
         .side-image {
-            max-width: 100%;
-            height: auto;
+            width: 250px;
+            height: 180px;
+            object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
@@ -81,20 +77,30 @@
             color: #555;
             margin-top: 6px;
             font-style: italic;
+            text-align: center;
+            width: 250px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* 底部多張圖片區 */
+        /* 置中圖片容器 */
+        .side-image-wrapper {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* 四張圖片展示區 */
         .bottom-images {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             margin-top: 30px;
+            justify-content: center;
         }
 
         .image-box {
-            flex: 1 1 calc(25% - 20px);
-            min-width: 180px;
             text-align: center;
+            flex: 0 0 auto;
         }
 
         /* 文字區塊標題 */
@@ -119,11 +125,11 @@
         @media (max-width: 768px) {
             .bottom-images {
                 flex-direction: column;
+                align-items: center;
             }
 
             .image-box {
-                flex: none;
-                width: 100%;
+                margin-bottom: 20px;
             }
         }
     </style>
